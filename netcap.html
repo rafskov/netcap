@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Basic Net Capital Calculator</title>
+
+    <!--<style>
+        .space-right {
+            padding:10px;
+        }
+        
+    </style>-->
+
+
+  </head>
+  <body class="bg-dark">
+    <div class="container align-items-center">
+    <div class="card mx-auto " style=width: 15.5em;margin:0 auto;">
+            
+                    
+    <form>
+        <h1>Net Capital Calculator SEC Rule 15c3-1</h1>
+        <div class="form-group row">
+          <label for="totalAssets" class = "col-sm-2 col-form-label px-md-4">Total Assets</label>
+          <div class ="col-sm-4" >
+          <input type="number" class="form-control space-right" id="totalAssets" placeholder="Total Assets">
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="totalLiabilities" class = "col-sm-2 col-form-label px-md-4">Total Liabilities</label>
+            <div class ="col-sm-4">
+            <input type="number" class="form-control space-right" id="totalLiabilities" placeholder="Total Liabilities">
+        </div>
+        </div>
+        <div class="form-group row">
+            <label for="subDebt" class = "col-sm-2 col-form-label px-md-4">Approved Subordinated Debt</label>
+            <div class ="col-sm-4">
+            <input type="number" class="form-control space-right" id="subDebt" placeholder="Approved Subordinated Debt">
+        </div>
+        </div>
+        <div class="form-group row">
+            <label for="nonallowableAssets" class = "col-sm-2 col-form-label px-md-4">Non Allowable Assets</label>
+            <div class ="col-sm-4">
+            <input type="number" class="form-control space-right" id="nonallowableAssets" placeholder="Non Allowable Assets">
+            
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="securedDemand" class = "col-sm-2 col-form-label px-md-4">Secured Demand Note Deficiency Charges</label>
+            <div class ="col-sm-4">
+            <input type="number" class="form-control space-right" id="securedDemand" placeholder="Secured Demand Note Deficiency Charges">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="excessFidelity" class = "col-sm-2 col-form-label px-md-4">Excess Fidelity Bond Charge</label>
+            
+            <div class ="col-sm-4">
+                <input type="number" class="form-control space-right" id="excessFidelity" placeholder="Excess Fidelity Bond Deductible Charges">
+            </div>
+        </div>
+        <div class="form-group row" >
+            <label for="haircuts" class = "col-sm-2 col-form-label px-md-4">Haircuts</label>
+            <div class ="col-sm-4">
+            <input type="number" class="form-control space-right" id="haircuts" placeholder="Haircuts">
+            </div>
+        </div>
+        <div class="form-group row" >
+            <label for="undue" class = "col-sm-2 col-form-label px-md-4">Undue Concentration</label>
+            <div class ="col-sm-4">
+            <input type="number" class="form-control space-right " id="undue" placeholder="Undue Concentration Charges">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="result" id="result" class = "col-sm-2 col-form-label px-md-4">Net Capital</label>
+        </div>
+        <center><button type="button" class="btn btn-primary" onclick="calculate()">Calculate</button></center>
+    </div>        
+</div>
+    
+</div>
+  
+        <script>
+        function calculate() {
+            var totalAssets = document.getElementById("totalAssets").value;
+            var totalLiabilities =document.getElementById("totalLiabilities").value;
+            var subDebt =document.getElementById("subDebt").value;
+            var nonallowableAssets=document.getElementById("nonallowableAssets").value;
+            var securedDemand =document.getElementById("securedDemand").value;
+            var excessFidelity=document.getElementById("excessFidelity").value;
+            var haircuts =document.getElementById("haircuts").value;
+            var undue =document.getElementById("undue").value;
+            var result = totalAssets-totalLiabilities+subDebt-nonallowableAssets-securedDemand-excessFidelity-haircuts-undue;
+
+            document.getElementById("result").innerHTML = result;
+
+
+        }
+        
+        
+        
+        </script>
+
+
+
+      </form>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
